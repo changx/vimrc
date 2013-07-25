@@ -87,6 +87,7 @@ call vam#ActivateAddons('github:scrooloose/nerdcommenter')
 call vam#ActivateAddons('github:slim-template/vim-slim')
 call vam#ActivateAddons('github:vim-scripts/plist.vim')
 call vam#ActivateAddons('github:wincent/Command-T')
+call vam#ActivateAddons('github:changx/vim-as-man-page-viewer')
 
 syntax on
 set ts=2 sts=2 sw=2 expandtab
@@ -106,13 +107,14 @@ filetype plugin on
 autocmd! bufwritepost .vimrc source ~/.vimrc
 
 if has("gui_running")
-  set guifont=Consolas\ for\ Powerline:h12
+  "set guifont=Consolas\ for\ Powerline:h12
+  set guifont=Menlo\ Regular\ for\ Powerline:h11
   set guifontwide=Hiragino\ Sans\ GB\ W3:h12
   set guioptions-=T
   set cursorline
   set linespace=2
-  set background=light
   colors railscasts
+  set background=dark
 else
   colors desert
 end
@@ -148,6 +150,7 @@ set tm=500
 set laststatus=2
 
 set foldmethod=syntax
+set foldlevelstart=99
 
 let mapleader=","
 let g:mapleader=","
@@ -193,3 +196,4 @@ map ,f :CommandTFlush<CR>
 map <C-n> :NERDTreeToggle<CR>
 
 let g:Powerline_symbols = "fancy"
+
