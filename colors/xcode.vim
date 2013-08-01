@@ -1,5 +1,5 @@
 " =============================================================================
-" Name: xcodelike
+" Name: xcode
 " Purpose: XCode-like colour scheme
 " Maintainer: Kazufumi Tomori (kaz6120@gmail.com)
 " 
@@ -17,7 +17,7 @@ if exists("syntax_on")
   syntax reset
 endif
 
-let colors_name = "xcodelike"
+let colors_name = "xcode"
   
 " =============================================================================
 " Vim >= 7.0 specific colours

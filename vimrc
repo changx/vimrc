@@ -88,6 +88,7 @@ call vam#ActivateAddons('github:slim-template/vim-slim')
 call vam#ActivateAddons('github:vim-scripts/plist.vim')
 call vam#ActivateAddons('github:wincent/Command-T')
 call vam#ActivateAddons('github:changx/vim-as-man-page-viewer')
+call vam#ActivateAddons('github:rking/ag.vim')
 
 syntax on
 set ts=2 sts=2 sw=2 expandtab
@@ -113,8 +114,10 @@ if has("gui_running")
   set guioptions-=T
   set cursorline
   set linespace=2
-  colors railscasts
-  set background=dark
+  "colors railscasts
+  "colors xcode
+  colors macvim
+  set background=light
 else
   colors desert
 end
