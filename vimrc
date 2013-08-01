@@ -89,6 +89,7 @@ call vam#ActivateAddons('github:vim-scripts/plist.vim')
 call vam#ActivateAddons('github:wincent/Command-T')
 call vam#ActivateAddons('github:changx/vim-as-man-page-viewer')
 call vam#ActivateAddons('github:rking/ag.vim')
+call vam#ActivateAddons('github:Valloric/YouCompleteMe')
 
 syntax on
 set ts=2 sts=2 sw=2 expandtab
@@ -128,6 +129,7 @@ set showmode		" Show current mode
 set wildchar=<TAB>	" start wild expansion in the command line using <TAB>
 set wildmenu            " wild char completion menu
 set wildmode=list:full
+set backspace=indent,eol,start
 
 " ignore these files while expanding wild chars
 set wildignore=*.o,*.class,*.pyc
