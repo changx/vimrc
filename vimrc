@@ -87,9 +87,12 @@ call vam#ActivateAddons('github:scrooloose/nerdcommenter')
 call vam#ActivateAddons('github:slim-template/vim-slim')
 call vam#ActivateAddons('github:vim-scripts/plist.vim')
 call vam#ActivateAddons('github:wincent/Command-T')
-call vam#ActivateAddons('github:changx/vim-as-man-page-viewer')
+"call vam#ActivateAddons('github:changx/vim-as-man-page-viewer')
 call vam#ActivateAddons('github:rking/ag.vim')
-call vam#ActivateAddons('github:Valloric/YouCompleteMe')
+"call vam#ActivateAddons('github:Valloric/YouCompleteMe')
+call vam#ActivateAddons('github:tpope/vim-rails')
+call vam#ActivateAddons('github:tpope/vim-surround')
+call vam#ActivateAddons('github:majutsushi/tagbar')
 
 syntax on
 set ts=2 sts=2 sw=2 expandtab
@@ -114,7 +117,7 @@ if has("gui_running")
   set guifontwide=Hiragino\ Sans\ GB\ W3:h12
   set guioptions-=T
   set cursorline
-  set linespace=2
+  set linespace=3
   "colors railscasts
   "colors xcode
   colors macvim
@@ -154,8 +157,8 @@ set tm=500
 
 set laststatus=2
 
-set foldmethod=syntax
 set foldlevelstart=99
+set foldmethod=marker
 
 let mapleader=","
 let g:mapleader=","
@@ -199,6 +202,13 @@ map ,f :CommandTFlush<CR>
 
 " NerdTree
 map <C-n> :NERDTreeToggle<CR>
+let g:NERDTreeQuitOnOpen = 1
 
 let g:Powerline_symbols = "fancy"
 
+" YCM
+let g:ycm_global_ycm_extra_conf = "~/.vim/ycm_global_conf.py"
+let g:ycm_min_num_identifier_candidate_chars = 2
+
+" TagBar
+nmap <C-\> :TagbarToggle<CR>
