@@ -90,9 +90,26 @@ call vam#ActivateAddons('github:wincent/Command-T')
 "call vam#ActivateAddons('github:changx/vim-as-man-page-viewer')
 call vam#ActivateAddons('github:rking/ag.vim')
 "call vam#ActivateAddons('github:Valloric/YouCompleteMe')
-call vam#ActivateAddons('github:tpope/vim-rails')
+"call vam#ActivateAddons('github:tpope/vim-rails')
 call vam#ActivateAddons('github:tpope/vim-surround')
 call vam#ActivateAddons('github:majutsushi/tagbar')
+"call vam#ActivateAddons('github:aaronbieber/vim-quicktask')
+call vam#ActivateAddons('github:Yggdroot/indentLine')
+"call vam#ActivateAddons('github:jlxz/TaskVim')
+call vam#ActivateAddons('github:vimwiki/vimwiki')
+call vam#ActivateAddons('github:scrooloose/syntastic')
+call vam#ActivateAddons('github:dart-lang/dart-vim-plugin')
+
+" go
+if exists("g:did_load_filetypes")
+  filetype off
+  filetype plugin indent off
+endif
+
+set runtimepath+=/usr/local/Cellar/go/1.3.3/libexec/misc/vim
+filetype plugin indent on
+filetype on
+autocmd FileType go autocmd BufWritePre <buffer> Fmt
 
 syntax on
 set ts=2 sts=2 sw=2 expandtab
@@ -104,17 +121,17 @@ set dir=/tmp/
 set guitablabel=%M%N\ %f
 set hlsearch
 
-filetype on
-filetype indent on
-filetype plugin on
+"filetype on
+"filetype indent on
+"filetype plugin on
 
 " auto reload vimrc when editing it
 autocmd! bufwritepost .vimrc source ~/.vimrc
 
 if has("gui_running")
-  "set guifont=Consolas\ for\ Powerline:h12
-  set guifont=Menlo\ Regular\ for\ Powerline:h11
-  set guifontwide=Hiragino\ Sans\ GB\ W3:h12
+  set guifont=Consolas\ for\ Powerline:h12
+  "set guifont=Menlo\ Regular\ for\ Powerline:h11
+  "set guifontwide=Hiragino\ Sans\ GB\ W3:h12
   set guioptions-=T
   set cursorline
   set linespace=3
@@ -126,10 +143,10 @@ else
   colors desert
 end
 
-set clipboard=unnamed	" yank to the system register (*) by default
-set showmatch		" Cursor shows matching ) and }
-set showmode		" Show current mode
-set wildchar=<TAB>	" start wild expansion in the command line using <TAB>
+set clipboard=unnamed   " yank to the system register (*) by default
+set showmatch       " Cursor shows matching ) and }
+set showmode        " Show current mode
+set wildchar=<TAB>  " start wild expansion in the command line using <TAB>
 set wildmenu            " wild char completion menu
 set wildmode=list:full
 set backspace=indent,eol,start
@@ -137,17 +154,17 @@ set backspace=indent,eol,start
 " ignore these files while expanding wild chars
 set wildignore=*.o,*.class,*.pyc
 
-set autoindent		" auto indentation
-set incsearch		" incremental search
-set nobackup		" no *~ backup files
-set copyindent		" copy the previous indentation on autoindenting
+set autoindent      " auto indentation
+set incsearch       " incremental search
+set nobackup        " no *~ backup files
+set copyindent      " copy the previous indentation on autoindenting
 set undofile
 set undodir=$HOME/.tmp/undofile
 set noswf
 set wrap
-set ignorecase		" ignore case when searching
-set smartcase		" ignore case if search pattern is all lowercase,case-sensitive otherwise
-" set smarttab		" insert tabs on the start of a line according to context
+set ignorecase      " ignore case when searching
+set smartcase       " ignore case if search pattern is all lowercase,case-sensitive otherwise
+" set smarttab      " insert tabs on the start of a line according to context
 
 " disable sound on errors
 set noerrorbells
@@ -211,4 +228,12 @@ let g:ycm_global_ycm_extra_conf = "~/.vim/ycm_global_conf.py"
 let g:ycm_min_num_identifier_candidate_chars = 2
 
 " TagBar
-nmap <C-\> :TagbarToggle<CR>
+" nmap <C-\> :TagbarToggle<CR>
+
+" Quicktask
+autocmd BufNewFile,BufRead *.quicktask setf quicktask
+
+let g:indentLine_char = '|'
+let g:indentLine_color_gui = '#DDDDDD'
+
+
