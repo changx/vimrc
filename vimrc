@@ -237,11 +237,13 @@ let g:Powerline_symbols = "fancy"
 " YCM
 let g:ycm_global_ycm_extra_conf = "~/.vim/ycm_global_conf.py"
 let g:ycm_min_num_identifier_candidate_chars = 2
-" YCM 补全菜单配色
-" 菜单
-highlight Pmenu ctermfg=2 ctermbg=3 guifg=#005f87 guibg=#EEE8D5
-" 选中项
-highlight PmenuSel ctermfg=2 ctermbg=3 guifg=#AFD700 guibg=#106900
+if has("gui_running")
+  " YCM 补全菜单配色
+  " 菜单
+  highlight Pmenu ctermfg=2 ctermbg=3 guifg=#005f87 guibg=#EEE8D5
+  " 选中项
+  highlight PmenuSel ctermfg=2 ctermbg=3 guifg=#AFD700 guibg=#106900
+endif
 " 补全功能在注释中同样有效
 let g:ycm_complete_in_comments=1
 " 允许 vim 加载 .ycm_extra_conf.py 文件，不再提示
