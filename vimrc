@@ -88,7 +88,7 @@ call vam#ActivateAddons('github:scrooloose/nerdcommenter')
 call vam#ActivateAddons('github:darfink/vim-plist')
 "call vam#ActivateAddons('github:wincent/Command-T')
 call vam#ActivateAddons('github:rking/ag.vim')
-call vam#ActivateAddons('github:Valloric/YouCompleteMe')
+"call vam#ActivateAddons('github:Valloric/YouCompleteMe')
 call vam#ActivateAddons('github:tpope/vim-rails')
 call vam#ActivateAddons('github:tpope/vim-bundler')
 call vam#ActivateAddons('github:tpope/vim-surround')
@@ -100,10 +100,11 @@ call vam#ActivateAddons('github:vimwiki/vimwiki')
 call vam#ActivateAddons('github:scrooloose/syntastic')
 "call vam#ActivateAddons('github:dart-lang/dart-vim-plugin')
 call vam#ActivateAddons('github:elixir-lang/vim-elixir')
-call vam#ActivateAddons('github:szw/vim-tags')
+"call vam#ActivateAddons('github:szw/vim-tags')
 call vam#ActivateAddons('github:vim-ruby/vim-ruby')
 call vam#ActivateAddons('github:Lokaltog/vim-easymotion')
 call vam#ActivateAddons('github:kshenoy/vim-signature')
+call vam#ActivateAddons('github:rust-lang/rust.vim')
 
 " go
 "if exists("g:did_load_filetypes")
@@ -170,7 +171,7 @@ set copyindent      " copy the previous indentation on autoindenting
 set undofile
 set undodir=$HOME/.tmp/undofile
 set noswf
-set nowrap
+set wrap
 set ignorecase      " ignore case when searching
 set smartcase       " ignore case if search pattern is all lowercase,case-sensitive otherwise
 " set smarttab      " insert tabs on the start of a line according to context
@@ -307,4 +308,8 @@ let g:SignatureMap = {
 let g:plist_display_format = 'xml'
 
 " nerdcommenter
-nmap <D-/>  <Plug>NERDCommenterToggle
+map <D-/>  <Plug>NERDCommenterToggle
+
+"KML
+au BufNewFile,BufRead *.kml setf kml
+au Filetype kml syntax off
